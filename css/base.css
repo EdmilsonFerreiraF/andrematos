@@ -229,7 +229,7 @@ p {
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-column: 1 / 4;
-  background: url("https://www.poraodamusica.com/wp-content/uploads/2015/05/21.jpg") no-repeat center;
+  background: url("../img/andre-matos-img-1.webp") no-repeat center;
   background-size: cover;
 }
 
