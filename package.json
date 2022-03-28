@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "html:watch": "live-server --port=3000 --open=index.html --watch=index.html",
-    "sass:watch": "node-sass sass/base.scss css/style.css -w"
+    "sass:watch": "node-sass sass/base.scss css/style.css -w",
+    "sass:build": "node-sass sass/base.scss css/style.css --output-style compressed"
   },
   "repository": "https://github.com/EdmilsonFerreiraF/andrematos.git",
   "author": "EdmilsonFerreiraF <Edmilsonf.o3@gmail.com>",
