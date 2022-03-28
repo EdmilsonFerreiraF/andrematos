@@ -6,12 +6,9 @@ $bp-large: 62.5em;
 $bp-largest: 75em;
 $bp-extra-large: 93.75em;
 
-$font-primary: 'Poiret One',
-cursive;
-$font-secondary: 'Assistant',
-sans-serif;
-$font-tertiary: 'Roboto',
-sans-serif;
+$font-primary: "Poiret One", cursive;
+$font-secondary: "Assistant", sans-serif;
+$font-tertiary: "Roboto", sans-serif;
 
 $color-primary: rgb(51, 58, 160);
 $color-secondary: rgb(178, 57, 65);
@@ -19,9 +16,18 @@ $color-tertiary: rgb(65, 178, 57);
 
 $color-white: white;
 $color-whitesmoke: whitesmoke;
-$color-lg-primary: linear-gradient(rgba(51, 58, 160, 0.7), rgba(71, 77, 169, 0.7));
-$color-lg-secondary: linear-gradient(rgba(178, 57, 65, 0), rgba(185, 76, 84, 0.1));
-$color-lg-tertiary: linear-gradient(rgba(65, 178, 57, 0), rgba(84, 185, 76, 0.1));
+$color-lg-primary: linear-gradient(
+  rgba(51, 58, 160, 0.7),
+  rgba(71, 77, 169, 0.7)
+);
+$color-lg-secondary: linear-gradient(
+  rgba(178, 57, 65, 0),
+  rgba(185, 76, 84, 0.1)
+);
+$color-lg-tertiary: linear-gradient(
+  rgba(65, 178, 57, 0),
+  rgba(84, 185, 76, 0.1)
+);
 
 /*/////////////////////////////// GERAIS ///////////////////////////
 /////*/
@@ -29,573 +35,545 @@ $color-lg-tertiary: linear-gradient(rgba(65, 178, 57, 0), rgba(84, 185, 76, 0.1)
 *,
 *:before,
 *:after {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
 }
 
 *:hover,
 *:active {
-    transition: all .3s linear;
+  transition: all 0.3s linear;
 }
 
 @media only screen and (max-width: $bp-small) {
-    html {
-        font-size: 70%;
-    }
+  html {
+    font-size: 70%;
+  }
 }
 
 @media only screen and (min-width: $bp-medium) {
-    html {
-        font-size: 90%;
-    }
+  html {
+    font-size: 90%;
+  }
 }
 
 @media only screen and (min-width: $bp-large) {
-    html {
-        font-size: 90%;
-    }
+  html {
+    font-size: 90%;
+  }
 }
 
 @media only screen and (min-width: $bp-largest) {
-    html {
-        font-size: 100%;
-    }
+  html {
+    font-size: 100%;
+  }
 }
 
 body {
-    color: #191919;
-    //font-size: 16em;
+  color: #191919;
+  //font-size: 16em;
 }
 
 .container {
-    display: grid;
-    //grid-template-rows: repeat(3, 40vw);
-    grid-template-columns: 10% 80% 10%;
-    margin-top: 3%;
+  display: grid;
+  //grid-template-rows: repeat(3, 40vw);
+  grid-template-columns: 10% 80% 10%;
+  margin-top: 3%;
 
-    @media only screen and (max-width: $bp-small) {
-        grid-template-columns: 100%;
-    }
+  @media only screen and (max-width: $bp-small) {
+    grid-template-columns: 100%;
+  }
 
-    @media only screen and (min-width: $bp-medium) {
-        grid-template-columns: 7.5% 85% 7.5%;
-    }
+  @media only screen and (min-width: $bp-medium) {
+    grid-template-columns: 7.5% 85% 7.5%;
+  }
 
-    @media only screen and (min-width: $bp-large) {
-        grid-template-columns: 5% 90% 5%;
-    }
+  @media only screen and (min-width: $bp-large) {
+    grid-template-columns: 5% 90% 5%;
+  }
 
-    @media only screen and (min-width: $bp-largest) {
-        grid-template-columns: 11% 78% 11%;
-    }
+  @media only screen and (min-width: $bp-largest) {
+    grid-template-columns: 11% 78% 11%;
+  }
 
-    @media only screen and (min-width: $bp-extra-large) {
-        grid-template-columns: 15% 70% 15%;
-    }
+  @media only screen and (min-width: $bp-extra-large) {
+    grid-template-columns: 15% 70% 15%;
+  }
 }
 
 h1 {
-    font-family: $font-tertiary;
+  font-family: $font-tertiary;
 }
 
 h2 {
-    font-family: $font-tertiary;
+  font-family: $font-tertiary;
 }
 
 p {
-    font-family: $font-secondary;
+  font-family: $font-secondary;
 }
 
 /*/////////////////////////////// HEADING ///////////////////////////
 /////*/
 .heading {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+
+  background: linear-gradient(rgb(57, 65, 178), rgb(76, 84, 185));
+
+  &__nav {
+    width: 100%;
     display: flex;
-    flex-grow: 1;
+    flex-direction: row;
     justify-content: center;
 
-    background: linear-gradient(rgb(57, 65, 178), rgb(76, 84, 185));
+    //width: 40rem;
+    //flex-grow: 1;
+    //width: 100%;
+    list-style-type: none;
+    height: 3rem;
+  }
 
-    &__nav {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
+  &__btn {
+    display: flex;
+    //flex-direction: row;
+    text-transform: uppercase;
 
-        //width: 40rem;
-        //flex-grow: 1;
-        //width: 100%;
-        list-style-type: none;
-        height: 3rem;
+    width: 7rem;
+    height: 3rem;
 
-    }
+    justify-content: center;
+    align-self: center;
 
-    &__btn {
-        display: flex;
-        //flex-direction: row;
-        text-transform: uppercase;
+    color: white;
 
-        width: 7rem;
-        height: 3rem;
+    text-decoration: none;
+    font-family: $font-secondary;
+    font-size: 1rem;
+  }
 
-        justify-content: center;
-        align-self: center;
+  &__btn li {
+    justify-content: center;
+    align-self: center;
+  }
 
-        color: white;
+  &__btn:hover {
+    background: $color-lg-primary;
+  }
 
-
-        text-decoration: none;
-        font-family: $font-secondary;
-        font-size: 1rem;
-    }
-
-    &__btn li {
-        justify-content: center;
-        align-self: center;
-
-    }
-
-
-    &__btn:hover {
-        background: $color-lg-primary;
-    }
-
-    &__btn:active,
-    &__btn li:active {
-        color: gray;
-    }
+  &__btn:active,
+  &__btn li:active {
+    color: gray;
+  }
 }
 
 /*/////////////////////////////// MAIN ///////////////////////////
 /////*/
 
 .main {
-    display: grid;
-    grid-template-rows: repeat(4, 80vw);
-    grid-template-columns: 50% 50%;
-    //grid-gap: 1%;
-    //grid-row: 1 / 4;
-    //grid-column: 2 / 3;
+  display: grid;
+  grid-template-rows: repeat(4, 80vw);
+  grid-template-columns: 50% 50%;
+  //grid-gap: 1%;
+  //grid-row: 1 / 4;
+  //grid-column: 2 / 3;
 
-    background-color: whitesmoke;
+  background-color: whitesmoke;
+
+  @media only screen and (max-width: $bp-medium) {
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(4, 81vw);
+    grid-column: 1 / 4;
+  }
+
+  @media only screen and (min-width: $bp-medium) {
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(4, 57vw);
+    grid-column: 2 / 3;
+  }
+
+  @media only screen and (min-width: $bp-large) {
+    grid-template-columns: 50% 50%;
+    grid-template-rows: repeat(3, 45vw);
+    grid-column: 2 / 3;
+  }
+
+  &__main-presentation {
+    display: grid;
+    grid-template-rows: 30% 40% 30%;
+    grid-row: 1 / 2;
+    grid-column: 1 / 4;
+
+    background: url("https://img.r7.com/images/2013/09/22/16_54_33_829_file")
+      no-repeat center;
+    background-size: cover;
+  }
+
+  &__presentation {
+    display: grid;
+    grid-template-rows: 30% 40% 30%;
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+    //align-content: space-around;
+
+    background: url("https://www.poraodamusica.com/wp-content/uploads/2015/05/21.jpg")
+      no-repeat center;
+    background-size: cover;
+    /*background: url("https://www.poraodamusica.com/wp-content/uploads/2015/05/21.jpg") no-repeat center;
+        background-size: cover;*/
 
     @media only screen and (max-width: $bp-medium) {
-        grid-template-columns: 100%;
-        grid-template-rows: repeat(4, 81vw);
-        grid-column: 1 / 4;
+      grid-row: 2 / 3;
     }
 
     @media only screen and (min-width: $bp-medium) {
-        grid-template-columns: 100%;
-        grid-template-rows: repeat(4, 57vw);
-        grid-column: 2 / 3;
+      grid-row: 2 / 3;
     }
 
     @media only screen and (min-width: $bp-large) {
-        grid-template-columns: 50% 50%;
-        grid-template-rows: repeat(3, 45vw);
-        grid-column: 2 / 3;
+      grid-row: 2 / 2;
+      grid-column: 1 / 2;
+    }
+  }
+
+  &__career {
+    display: grid;
+    grid-template-rows: 30% 40% 30%;
+    grid-column: 1 / 2;
+    //align-content: space-around;
+
+    background: url("http://www.tenhomaisdiscosqueamigos.com/wp-content/uploads/2012/12/Andr%C3%A9-Matos-canta-hino-do-Corinthians-em-japon%C3%AAs.jpg")
+      no-repeat center;
+    background-size: cover;
+
+    @media only screen and (max-width: $bp-medium) {
+      grid-row: 3 / 4;
+      grid-template-rows: 30% 35% 35%;
     }
 
-    &__main-presentation {
-        display: grid;
-        grid-template-rows: 30% 40% 30%;
-        grid-row: 1 / 2;
-        grid-column: 1 / 4;
-
-        background: url("https://img.r7.com/images/2013/09/22/16_54_33_829_file") no-repeat center;
-        background-size: cover;
-
+    @media only screen and (min-width: $bp-medium) {
+      grid-row: 3 / 4;
     }
 
-    &__presentation {
-        display: grid;
-        grid-template-rows: 30% 40% 30%;
-        grid-row: 2 / 3;
-        grid-column: 1 / 2;
-        //align-content: space-around;
+    @media only screen and (min-width: $bp-large) {
+      grid-row: 2 / 3;
+      grid-column: 2 / 3;
+    }
+  }
 
+  &__shows {
+    display: grid;
+    grid-template-rows: 15% 40% 50%;
+    grid-row: 1 / 2;
+    grid-column: 1 / 3;
+  }
 
-        background: url("https://www.poraodamusica.com/wp-content/uploads/2015/05/21.jpg") no-repeat center;
-        background-size: cover;
-        /*background: url("https://www.poraodamusica.com/wp-content/uploads/2015/05/21.jpg") no-repeat center;
-        background-size: cover;*/
+  &__video {
+    display: grid;
+    grid-template-rows: 15% 20% 45% 25%;
+    grid-template-columns: 20% 60% 20%;
+    //grid-row: 3 / 4;
+    grid-column: 1 / 3;
 
-        @media only screen and (max-width: $bp-medium) {
-            grid-row: 2 / 3;
-        }
+    background: url("http://2.bp.blogspot.com/-n_d2AyCNbaM/Um_Z2eO9faI/AAAAAAAABGA/Y98pFZKU3M8/s1600/andrematos.jpg")
+      no-repeat top;
+    background-size: cover;
 
-        @media only screen and (min-width: $bp-medium) {
-            grid-row: 2 / 3;
-
-        }
-
-        @media only screen and (min-width: $bp-large) {
-            grid-row: 2 / 2;
-            grid-column: 1 / 2;
-        }
-
+    @media only screen and (max-width: $bp-medium) {
+      grid-row: 4 / 5;
+      grid-template-rows: 30% 35% 35%;
     }
 
-    &__career {
-        display: grid;
-        grid-template-rows: 30% 40% 30%;
-        grid-column: 1 / 2;
-        //align-content: space-around;
+    @media only screen and (min-width: $bp-large) {
+      grid-row: 3 / 4;
+    }
+  }
 
-        background: url("http://www.tenhomaisdiscosqueamigos.com/wp-content/uploads/2012/12/Andr%C3%A9-Matos-canta-hino-do-Corinthians-em-japon%C3%AAs.jpg") no-repeat center;
-        background-size: cover;
+  &__bio {
+    display: grid;
 
-        @media only screen and (max-width: $bp-medium) {
-            grid-row: 3 / 4;
-            grid-template-rows: 30% 35% 35%;
-        }
+    grid-template-columns: 20% 60% 20%;
+    grid-row: 1 / 2;
+    grid-column: 1 / 3;
+    //grid-template-rows: 15% 40% 70rem 40% 70rem;
+    grid-template-rows: 15% 30% min-content min-content min-content;
 
-        @media only screen and (min-width: $bp-medium) {
-            grid-row: 3 / 4;
+    background-color: $color-whitesmoke;
 
-        }
-
-        @media only screen and (min-width: $bp-large) {
-            grid-row: 2 / 3;
-            grid-column: 2 / 3;
-        }
-
+    @media only screen and (min-width: $bp-medium) {
+      grid-template-columns: 20% 60% 20%;
+      //font-size: 1.4rem;
     }
 
-    &__shows {
-        display: grid;
-        grid-template-rows: 15% 40% 50%;
-        grid-row: 1 / 2;
-        grid-column: 1 / 3;
+    @media only screen and (min-width: 320px) {
+      grid-template-columns: 5% 90% 5%;
     }
-
-    &__video {
-        display: grid;
-        grid-template-rows: 15% 20% 45% 25%;
-        grid-template-columns: 20% 60% 20%;
-        //grid-row: 3 / 4;
-        grid-column: 1 / 3;
-
-        background: url("http://2.bp.blogspot.com/-n_d2AyCNbaM/Um_Z2eO9faI/AAAAAAAABGA/Y98pFZKU3M8/s1600/andrematos.jpg") no-repeat top;
-        background-size: cover;
-        
-        @media only screen and (max-width: $bp-medium) {
-            grid-row: 4 / 5;
-            grid-template-rows: 30% 35% 35%;
-        }
-
-        @media only screen and (min-width: $bp-large) {
-            grid-row: 3 / 4;
-
-        }
-    }
-
-    &__bio {
-        display: grid;
-        
-        grid-template-columns: 20% 60% 20%;
-        grid-row: 1 / 2;
-        grid-column: 1 / 3;
-        //grid-template-rows: 15% 40% 70rem 40% 70rem;
-        grid-template-rows: 15% 30% min-content min-content min-content;
-        
-        background-color: $color-whitesmoke;
-
-        
-              @media only screen and (min-width: $bp-medium) {
-            grid-template-columns: 20% 60% 20%;
-                  //font-size: 1.4rem;
-                  
-        }
-        
-        @media only screen and (min-width: 320px) {
-            grid-template-columns: 5% 90% 5%;
-        }
-
-
-    }
+  }
 }
 
 // PRESENTATION \\
 
 .main-presentation {
-    
-    &__site {
-        //display: flex;
-        //flex-direction: column;
-        //align-content: center;
-               
-        grid-row: 3 / 4;
-        grid-column: 3 / 4;
-        margin-left: auto;
-        margin-right: 3rem;
-        //width: 5.6rem;
-        height: 5rem;
-        clear: both;
-    }
+  &__site {
+    //display: flex;
+    //flex-direction: column;
+    //align-content: center;
 
-    &__h1 {
-        clear: both;
-        padding: 2%;
-        display: grid;
-        color: white;
-        align-self: center;
-        text-align: center;
-        grid-row: 1 / 2;
-        grid-column: 1 / 4;
-    }
-    
-    &__link {
-        text-decoration: none;
-    }
-    
-    &__span {
+    grid-row: 3 / 4;
+    grid-column: 3 / 4;
+    margin-left: auto;
+    margin-right: 3rem;
+    //width: 5.6rem;
+    height: 5rem;
+    clear: both;
+  }
 
-        vertical-align: middle;
-        grid-row: 1 / 2;
-        //grid-column: 3 / 4;
-        font-size: 1.7rem;
-        color: $color-tertiary;
-    }
-    
-    &__img {
-                vertical-align: middle;
-margin-left: 1rem;
-        width: 5rem;
-    }
+  &__h1 {
+    clear: both;
+    padding: 2%;
+    display: grid;
+    color: white;
+    align-self: center;
+    text-align: center;
+    grid-row: 1 / 2;
+    grid-column: 1 / 4;
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+
+  &__span {
+    vertical-align: middle;
+    grid-row: 1 / 2;
+    //grid-column: 3 / 4;
+    font-size: 1.7rem;
+    color: $color-tertiary;
+  }
+
+  &__img {
+    vertical-align: middle;
+    margin-left: 1rem;
+    width: 5rem;
+  }
 }
 
 .presentation {
+  &__h1 {
+    align-self: center;
+    grid-row: 1 / 2;
+    padding: 3%;
+    //margin-top: 7%;
+    text-align: center;
 
-    &__h1 {
-        align-self: center;
-        grid-row: 1 / 2;
-        padding: 3%;
-        //margin-top: 7%;
-        text-align: center;
+    color: white;
+  }
 
-        color: white;
-    }
+  &__h2 {
+    align-self: center;
+    grid-row: 1 / 2;
+    padding: 3%;
+    //margin-top: 7%;
+    text-align: center;
 
-    &__h2 {
-        align-self: center;
-        grid-row: 1 / 2;
-        padding: 3%;
-        //margin-top: 7%;
-        text-align: center;
+    color: white;
+  }
 
-        color: white;
-    }
+  &__h3 {
+    display: grid;
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+  }
 
-    &__h3 {
-        display: grid;
-        grid-row: 2 / 3;
-        grid-column: 1 / 2;
+  &__p {
+    text-align: center;
+    font-size: 1.4rem;
 
-    }
+    color: white;
+  }
 
-    &__p {
-        text-align: center;
-        font-size: 1.4rem;
+  &__legend {
+    grid-row: 3 / 4;
+    background: $color-lg-tertiary;
+    padding: 0 3%;
+  }
 
-
-        color: white;
-    }
-
-    &__legend {
-        grid-row: 3 / 4;
-        background: $color-lg-tertiary;
-        padding: 0 3%;
-    }
-
-    &__source {
-        display: grid;
-        grid-row: 2 / 3;
-        grid-column: 1 / 2;
-        margin-left: auto;
-    }
+  &__source {
+    display: grid;
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+    margin-left: auto;
+  }
 }
 
 .career {
+  &__h1 {
+    grid-row: 1 / 2;
+    align-self: center;
+    //margin-top: 7%;
+    text-align: center;
 
-    &__h1 {
-        grid-row: 1 / 2;
-        align-self: center;
-        //margin-top: 7%;
-        text-align: center;
+    color: white;
+  }
 
-        color: white;
-    }
+  &__h3 {
+    display: grid;
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+  }
 
-    &__h3 {
-        display: grid;
-        grid-row: 2 / 3;
-        grid-column: 1 / 2;
+  &__p {
+    text-align: center;
+    font-size: 1.4rem;
 
-    }
+    color: white;
+  }
 
-    &__p {
-        text-align: center;
-        font-size: 1.4rem;
-
-        color: white;
-    }
-
-    &__legend {
-        grid-row: 3 / 4;
-        padding: 0 3%;
-        background: $color-lg-secondary;
-
-    }
-
+  &__legend {
+    grid-row: 3 / 4;
+    padding: 0 3%;
+    background: $color-lg-secondary;
+  }
 }
 
 .shows {
+  &__h1 {
+    grid-row: 2 / 3;
+    text-align: center;
+  }
 
-    &__h1 {
-        grid-row: 2 / 3;
-        text-align: center;
+  &__nav {
+    display: grid;
+    grid-row: 3 / 4;
+    justify-content: center;
 
-    }
+    font-size: 1.3rem;
+  }
 
-    &__nav {
-        display: grid;
-        grid-row: 3 / 4;
-        justify-content: center;
-
-        font-size: 1.3rem;
-    }
-
-    &__li {
-        color: $color-primary;
-        text-decoration: none;
-    }
-
+  &__li {
+    color: $color-primary;
+    text-decoration: none;
+  }
 }
 
 .video {
+  &__h1 {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+    color: white;
+    z-index: 999999;
+    text-align: center;
+  }
 
-    &__h1 {
-        grid-row: 2 / 3;
-        grid-column: 2 / 3;
-        color: white;
-        z-index: 999999;
-        text-align: center;
-
-    }
-
-    &__container {
-
-        grid-row: 3 / 4;
-        grid-column: 2 / 3;
-    }
+  &__container {
+    grid-row: 3 / 4;
+    grid-column: 2 / 3;
+  }
 }
 
 .bio {
+  &__h1 {
+    display: grid;
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+    text-align: center;
+  }
 
-    &__h1 {
-        display: grid;
-        grid-row: 2 / 3;
-        grid-column: 2 / 3;
-        text-align: center;
+  &__h2 {
+    &-1 {
+      display: grid;
+      grid-row: 4 / 5;
+      grid-column: 2 / 3;
+      text-align: center;
+      font-size: 1.2rem;
+
+      margin-bottom: 10%;
     }
 
-    &__h2 {
-        &-1{
-        display: grid;
-        grid-row: 4 / 5;
-            grid-column: 2 / 3;
-        text-align: center;
-        font-size: 1.2rem;
-            
-            margin-bottom: 10%;
-        }
-        
-        &-2 {
-                   display: grid;
-        grid-row: 5 / 6;
-                        grid-column: 2 / 3;
+    &-2 {
+      display: grid;
+      grid-row: 5 / 6;
+      grid-column: 2 / 3;
 
-        text-align: center;
-        font-size: 1.2rem;
-        }
-        
-        &-3 {
-                   display: grid;
-        grid-row: 6 / 7;
-                        grid-column: 2 / 3;
-
-        text-align: center;
-        font-size: 1.2rem;
-        }
-        }
-
-    &__p {
-        &-1 {
-            display: grid;
-            grid-row: 3 / 4;
-            grid-column: 2 / 3;
-
-            text-align: center;
-
-            line-height: 1.6;
-            font-size: 1.4rem;
-            
-            margin-bottom: 10%;
-        }
-
-        &-2 {
-            display: grid;
-            grid-row: 4 / 5;
-            grid-column: 2 / 3;
-            
-            margin-top: 10%;
-
-            text-align: center;
-
-            line-height: 1.6;
-            font-size: 1.2rem;
-            
-            margin-bottom: 10%;
-        }
-        
-        &-3 {
-                        display: grid;
-            grid-row: 5 / 6;
-            grid-column: 2 / 3;
-            
-            margin-top: 10%;
-            margin-bottom: 10%;
-
-            text-align: center;
-
-            line-height: 1.6;
-            font-size: 1.2rem;
-            
-             background-color: $color-whitesmoke;
-        }
-        
-        &-4 {
-                        display: grid;
-            grid-row: 6 / 7;
-            grid-column: 2 / 3;
-            
-            margin-top: 10%;
-
-            text-align: center;
-
-            line-height: 1.6;
-            font-size: 1.2rem;
-             background-color: $color-whitesmoke;
-        }
+      text-align: center;
+      font-size: 1.2rem;
     }
 
+    &-3 {
+      display: grid;
+      grid-row: 6 / 7;
+      grid-column: 2 / 3;
 
-    &__source {
-        grid-column: 2 / 3;
-        grid-row: 7 / 8;
-        color: $color-secondary;
-        text-align: right;
+      text-align: center;
+      font-size: 1.2rem;
     }
+  }
+
+  &__p {
+    &-1 {
+      display: grid;
+      grid-row: 3 / 4;
+      grid-column: 2 / 3;
+
+      text-align: center;
+
+      line-height: 1.6;
+      font-size: 1.4rem;
+
+      margin-bottom: 10%;
+    }
+
+    &-2 {
+      display: grid;
+      grid-row: 4 / 5;
+      grid-column: 2 / 3;
+
+      margin-top: 10%;
+
+      text-align: center;
+
+      line-height: 1.6;
+      font-size: 1.2rem;
+
+      margin-bottom: 10%;
+    }
+
+    &-3 {
+      display: grid;
+      grid-row: 5 / 6;
+      grid-column: 2 / 3;
+
+      margin-top: 10%;
+      margin-bottom: 10%;
+
+      text-align: center;
+
+      line-height: 1.6;
+      font-size: 1.2rem;
+
+      background-color: $color-whitesmoke;
+    }
+
+    &-4 {
+      display: grid;
+      grid-row: 6 / 7;
+      grid-column: 2 / 3;
+
+      margin-top: 10%;
+
+      text-align: center;
+
+      line-height: 1.6;
+      font-size: 1.2rem;
+      background-color: $color-whitesmoke;
+    }
+  }
+
+  &__source {
+    grid-column: 2 / 3;
+    grid-row: 7 / 8;
+    color: $color-secondary;
+    text-align: right;
+  }
 }
