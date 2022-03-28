@@ -71,6 +71,7 @@ $color-lg-tertiary: linear-gradient(
 
 body {
   color: #191919;
+  text-align: center;
 }
 
 h1 {
@@ -95,8 +96,8 @@ p {
   background: linear-gradient(rgb(57, 65, 178), rgb(76, 84, 185));
 
   &__nav {
-    width: 100%;
     display: flex;
+    width: 100%;
     flex-direction: row;
     justify-content: center;
 
@@ -148,7 +149,6 @@ p {
 
   @media (max-width: $bp-medium) {
     grid-template-columns: 100%;
-    grid-template-rows: repeat(4, 81vw);
   }
 
   @media (min-width: $bp-medium) {
@@ -162,43 +162,26 @@ p {
   }
 
   &__main-presentation {
-    display: grid;
-    grid-template-rows: 30% 40% 30%;
     grid-column: 1 / -1;
 
-    background: url("../img/andre-matos-img-1.webp")
-      no-repeat center;
+    background: url("../img/andre-matos-img-1.webp") no-repeat center;
     background-size: cover;
   }
 
   &__presentation {
-    display: grid;
-    grid-template-rows: 30% 40% 30%;
-    grid-row: 2 / 3;
-
-    background: url("../img/andre-matos-img-3.webp")
-      no-repeat center;
+    background: url("../img/andre-matos-img-3.webp") no-repeat center;
     background-size: cover;
-
-    @media (min-width: $bp-large) {
-      grid-row: 2 / 2;
-    }
+    position: relative;
+    grid-row: 2 / 3;
   }
 
   &__career {
-    display: grid;
-    grid-template-rows: 30% 40% 30%;
+    position: relative;
 
-    background: url("../img/andre-matos-img-4.webp")
-      no-repeat center;
+    background: url("../img/andre-matos-img-4.webp") no-repeat center;
     background-size: cover;
 
-    @media (max-width: $bp-medium) {
-      grid-row: 3 / 4;
-      grid-template-rows: 30% 35% 35%;
-    }
-
-    @media (min-width: $bp-medium) {
+    @media (max-width: $bp-large) {
       grid-row: 3 / 4;
     }
 
@@ -215,18 +198,10 @@ p {
   }
 
   &__video {
-    display: grid;
-    grid-template-rows: 15% 20% 45% 25%;
-    grid-template-columns: 20% 60% 20%;
     grid-column: 1 / 3;
 
-    background: url("../img/andre-matos-img-2.webp")
-      no-repeat top;
+    background: url("../img/andre-matos-img-2.webp") no-repeat top;
     background-size: cover;
-
-    @media (max-width: $bp-medium) {
-      grid-template-rows: 30% 35% 35%;
-    }
 
     @media (min-width: $bp-large) {
       grid-row: 3 / 4;
@@ -247,23 +222,15 @@ p {
 
 .main-presentation {
   &__site {
-    grid-row: 3 / 4;
-    grid-column: 3 / 4;
-    margin-left: auto;
-    margin-right: 3rem;
-    height: 5rem;
-    clear: both;
+    width: fit-content;
+    margin: 0 2rem 0 auto;
+    position: relative;
+    top: 12rem;
   }
 
   &__h1 {
-    clear: both;
-    padding: 2%;
-    display: grid;
+    padding: 5% 0;
     color: white;
-    align-self: center;
-    text-align: center;
-    grid-row: 1 / 2;
-    grid-column: 1 / 4;
   }
 
   &__link {
@@ -272,7 +239,6 @@ p {
 
   &__span {
     vertical-align: middle;
-    grid-row: 1 / 2;
     font-size: 1.7rem;
     color: $color-tertiary;
   }
@@ -285,56 +251,45 @@ p {
 
 .presentation {
   &__h1 {
-    align-self: center;
-    grid-row: 1 / 2;
-    padding: 3%;
-    text-align: center;
+    padding: 10% 0;
 
     color: white;
   }
 
   &__h2 {
-    align-self: center;
-    grid-row: 1 / 2;
-    padding: 3%;
-    text-align: center;
+    padding: 10% 0%;
 
     color: white;
   }
 
   &__h3 {
     display: grid;
-    grid-row: 2 / 3;
-    grid-column: 1 / 2;
   }
 
   &__p {
-    text-align: center;
     font-size: 1.4rem;
 
     color: white;
   }
 
   &__legend {
-    grid-row: 3 / 4;
     background: $color-lg-tertiary;
-    padding: 0 3%;
+    padding: 14% 3%;
+    width: 100%;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
   }
 
   &__source {
     display: grid;
-    grid-row: 2 / 3;
-    grid-column: 1 / 2;
     margin-left: auto;
   }
 }
 
 .career {
   &__h1 {
-    grid-row: 1 / 2;
-    align-self: center;
-    text-align: center;
-
+    padding: 10% 0;
     color: white;
   }
 
@@ -345,23 +300,23 @@ p {
   }
 
   &__p {
-    text-align: center;
     font-size: 1.4rem;
 
     color: white;
   }
 
   &__legend {
-    grid-row: 3 / 4;
-    padding: 0 3%;
     background: $color-lg-secondary;
+    padding: 8% 3%;
+    line-height: 1.6;
+    position: absolute;
+    bottom: 0;
   }
 }
 
 .shows {
   &__h1 {
-    grid-row: 2 / 3;
-    text-align: center;
+    padding: 10% 0;
   }
 
   &__nav {
@@ -380,16 +335,16 @@ p {
 
 .video {
   &__h1 {
-    grid-row: 2 / 3;
-    grid-column: 2 / 3;
+    padding: 7% 0;
     color: white;
     z-index: 999999;
-    text-align: center;
   }
 
   &__container {
-    grid-row: 3 / 4;
-    grid-column: 2 / 3;
+    max-width: 1000px;
+    margin: 1rem auto;
+    height: 60%;
+    width: 70%;
   }
 }
 
@@ -398,30 +353,24 @@ p {
 
   &__h1 {
     display: grid;
-    padding: 8%;
-    text-align: center;
+    padding: 10% 0;
   }
 
   &__h2 {
     &-1 {
       display: grid;
-      text-align: center;
       font-size: 1.2rem;
-
-      margin-bottom: 10%;
     }
 
     &-2 {
       display: grid;
 
-      text-align: center;
       font-size: 1.2rem;
     }
 
     &-3 {
       display: grid;
 
-      text-align: center;
       font-size: 1.2rem;
     }
   }
@@ -435,29 +384,26 @@ p {
       line-height: 1.6;
       font-size: 1.4rem;
 
-      margin-bottom: 10%;
+      margin: 7% auto 5% auto;
+      max-width: 1000px;
     }
 
     &-2 {
       display: grid;
 
-      margin-top: 10%;
-
-      text-align: center;
-
       line-height: 1.6;
       font-size: 1.2rem;
 
-      margin-bottom: 10%;
+      margin: 7% auto 5% auto;
+      max-width: 1000px;
     }
 
     &-3 {
       display: grid;
 
-      margin-top: 10%;
-      margin-bottom: 10%;
+      max-width: 1000px;
 
-      text-align: center;
+      margin: 7% auto 5% auto;
 
       line-height: 1.6;
       font-size: 1.2rem;
@@ -468,9 +414,8 @@ p {
     &-4 {
       display: grid;
 
-      margin-top: 10%;
-
-      text-align: center;
+      margin: 7% auto 5% auto;
+      max-width: 1000px;
 
       line-height: 1.6;
       font-size: 1.2rem;
