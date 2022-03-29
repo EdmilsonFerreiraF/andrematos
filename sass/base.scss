@@ -157,25 +157,27 @@ p {
     grid-template-rows: repeat(3, 45vw);
   }
 
+  &__main-presentation,
+  &__presentation,
+  &__career,
+  &__video {
+    background-size: cover;
+  }
+
   &__main-presentation {
     grid-column: 1 / -1;
-
     background: url("../img/andre-matos-img-1.webp") no-repeat center;
-    background-size: cover;
   }
 
   &__presentation {
     background: url("../img/andre-matos-img-3.webp") no-repeat center;
-    background-size: cover;
     position: relative;
     grid-row: 2 / 3;
   }
 
   &__career {
     position: relative;
-
     background: url("../img/andre-matos-img-4.webp") no-repeat center;
-    background-size: cover;
 
     @media (max-width: $bp-large) {
       grid-row: 3 / 4;
@@ -188,9 +190,7 @@ p {
 
   &__video {
     grid-column: 1 / 3;
-
     background: url("../img/andre-matos-img-2.webp") no-repeat top;
-    background-size: cover;
 
     @media (min-width: $bp-large) {
       grid-row: 3 / 4;
@@ -211,8 +211,17 @@ p {
   padding: 10% 0;
   color: white;
 
-  animation: slideDown .45s linear;
+  animation: slideDown .35s linear;
   
+  &--black {
+    color: black;
+  }
+}
+
+.text {
+  font-size: 1.4rem;
+  color: white;
+
   &--black {
     color: black;
   }
@@ -233,8 +242,7 @@ p {
 .subtitle {
   color: white;
   font-size: 1.2rem;
-  animation: slideDown .45s .45s linear;
-
+  animation: slideDown .35s .35s linear;
 }
 
 // PRESENTATION \\
@@ -245,8 +253,7 @@ p {
     margin: 0 2rem 0 auto;
     position: relative;
     top: 6rem;
-    animation: slideLeft .45s .45s linear;
-
+    animation: slideLeft .35s .35s linear;
   }
 
   @keyframes slideLeft {
@@ -286,7 +293,7 @@ p {
   width: 100%;
   box-sizing: border-box;
   min-height: 40%;
-  animation: fadeIn .45s linear;
+  animation: fadeIn .35s linear;
 }
 
 @keyframes fadeIn {
@@ -308,12 +315,6 @@ p {
     display: grid;
   }
 
-  &__p {
-    font-size: 1.4rem;
-
-    color: white;
-  }
-
   &__source {
     display: grid;
     margin-left: auto;
@@ -325,12 +326,6 @@ p {
     display: grid;
     grid-row: 2 / 3;
     grid-column: 1 / 2;
-  }
-
-  &__p {
-    font-size: 1.4rem;
-
-    color: white;
   }
 }
 
@@ -344,7 +339,7 @@ p {
     grid-template-rows: repeat(5, 70px);
     margin: 20px 0;
     font-size: 1.3rem;
-    animation: slideRight .45s linear;
+    animation: slideRight .35s linear;
     list-style: none;
   }
 
@@ -391,16 +386,11 @@ p {
   }
 
   &__p {
-    display: grid;
-
-    text-align: center;
-
     line-height: 1.6;
-    font-size: 1.4rem;
 
     margin: 7% auto 5% auto;
     max-width: 1000px;
-    animation: fadeIn .45s linear;
+    animation: fadeIn .75s linear;
 
     &--whitesmoke {
       background-color: $color-whitesmoke;
@@ -412,6 +402,6 @@ p {
     text-align: right;
     display: block;
     margin: 0 0 30px;
-    animation: slideLeft .45s .45s linear;
+    animation: slideLeft .35s .35s linear;
   }
 }
