@@ -10,6 +10,11 @@
 
 ### 🏠 [Homepage](https://andrematostribute.netlify.app)
 
+<div style="display: flex; justify-content: space-evenly; margin: 25px 0;">
+  <img src="img/andre-matos-print-1.webp">
+  <img src="img/andre-matos-print-2.webp">
+</div>
+
 ## Install
 
 ```sh
